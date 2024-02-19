@@ -1,4 +1,4 @@
-# Compiladores2024-1
+# Compilators2024-1
 -Juan David Mendiola Rios
 -The program was executed on Windows 11
 -The language was Phyton
