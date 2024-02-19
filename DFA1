@@ -1,0 +1,26 @@
+from automata.fa.dfa import DFA
+while True:
+    dfa = DFA(
+        states={'q0', 'q1', 'q2'},
+        input_symbols={'0', '1'},
+        transitions={
+            'q0': {'0': 'q0', '1': 'q1'},
+            'q1': {'0': 'q2', '1': 'q0'},
+            'q2': {'0': 'q1', '1': 'q2'}
+        },
+        initial_state='q0',
+        final_states={'q0'}
+    )
+    input_string = input("Write a string to check if the DFA is valid (or 'exit' to quit): ")
+    if input_string.lower() == 'exit':
+        print("See you later")
+        break
+    if dfa.accepts_input(input_string):
+        print(f"'{input_string}'The DFA is valid")
+    elif input_string == 'y':
+        print(f"The DFA valid the string '{input_string}'")
+    else:
+        print(f"'{input_string}'is not a valid DFA")
+
+
+
