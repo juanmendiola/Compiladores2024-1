@@ -1,8 +1,10 @@
 import random
 from automata.fa.dfa import DFA
 
+
 def generate_binary(length=1000000):
     return ''.join(random.choice("01") for _ in range(length))
+
 
 dfaa = DFA(
     states={'q0', 'q1', 'q2'},
@@ -16,14 +18,8 @@ dfaa = DFA(
     final_states={'q0'}
 )
 
-while True:
-    bin_string = input("Enter a binary string (or 'exit' to quit): ")
-
-    if bin_string.lower() == 'exit':
-        print("Goodbye!")
-        break
-
-    if dfaa.accepts_input(bin_string):
-        print((f"The DFA validates the string '{bin_string}'"))
-    else:
-        print(f"The DFA does not validate the string, so it is not a multiple of three in binary '{bin_string}'")
+bin_string = generate_binary()
+if dfaa.accepts_input(bin_string):
+    print(f"The DFA validates the string ")
+else:
+    print(f"The DFA does not validate the string, so it is not a multiple of three in binary")
