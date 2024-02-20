@@ -1,7 +1,7 @@
 import random
 from automata.fa.dfa import DFA
 
-def generate_binary(length=7):
+def generate_binary(length=1000000):
     return ''.join(random.choice("01") for _ in range(length))
 
 dfaa = DFA(
